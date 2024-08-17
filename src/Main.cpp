@@ -26,9 +26,11 @@ int main()
             }
         }
 
-        auto end        = std::chrono::steady_clock::now();
+        auto end = std::chrono::steady_clock::now();
+
         float deltaTime = std::chrono::duration<float>(end - start).count();
-        start           = end;
+
+        start = end;
 
         sf::Vector2f direction = {0.0f, 0.0f};
 
