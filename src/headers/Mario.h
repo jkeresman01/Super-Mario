@@ -23,7 +23,7 @@ class Animation
 
   private:
     static constexpr int32_t NUMBER_OF_FRAMES = 3;
-    static constexpr float HOLD_TIME = 0.1f;
+    static constexpr float HOLD_TIME          = 0.1f;
 
     sf::Texture m_texture;
     sf::IntRect m_frames[NUMBER_OF_FRAMES];
