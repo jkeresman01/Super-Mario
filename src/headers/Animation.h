@@ -14,8 +14,8 @@ typedef std::vector<sf::IntRect> FramesT;
 class Animation
 {
   public:
-    Animation(uint32_t positionX, uint32_t positionY, uint32_t width, uint32_t numberOfFrames,
-              uint32_t height, const std::filesystem::path &filepath);
+    Animation(uint32_t positionX, uint32_t positionY, uint32_t width, uint32_t height,
+              uint32_t numberOfFrames, const std::filesystem::path &filepath);
 
     void applyToSprite(sf::Sprite &sprite) const;
 
