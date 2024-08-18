@@ -10,6 +10,7 @@ include_directories(src/headers)
 set(SOURCE_FILES
     src/Main.cpp
     src/Mario.cpp
+    src/Animation.cpp
     src/ResourceManager.cpp
 )
 

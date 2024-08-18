@@ -4,16 +4,27 @@
 #include "headers/Mario.h"
 #include "headers/ResourceManager.h"
 
+#include <SFML/Graphics/RectangleShape.hpp>
 #include <chrono>
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");
+    sf::RenderWindow window(sf::VideoMode(960, 480), "SFML Window");
+    sf::View view(sf::Vector2f(0, 0), sf::Vector2f(960, 480));
     mario::ResourceManager resourceManager;
 
     mario::Mario mario;
 
     auto start = std::chrono::steady_clock::now();
+
+    sf::Vector2f direction = {0.0f, 0.0f};
+
+    sf::Texture mapTexture;
+    mapTexture.loadFromFile("resources/map.png");
+
+    sf::Sprite map;
+    map.setScale(2, 2);
+    map.setTexture(mapTexture);
 
     while (window.isOpen())
     {
@@ -32,7 +43,8 @@ int main()
 
         start = end;
 
-        sf::Vector2f direction = {0.0f, 0.0f};
+        direction.x *= 0.5;
+        direction.y *= 0.5;
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
         {
@@ -56,8 +68,11 @@ int main()
 
         mario.setDirection(direction);
         mario.update(deltaTime);
+        view.setCenter(mario.getPosition().x, mario.getPosition().y);
+        window.setView(view);
 
         window.clear();
+        window.draw(map);
         mario.render(window);
         window.display();
     }
