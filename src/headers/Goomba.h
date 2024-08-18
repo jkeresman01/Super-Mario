@@ -12,11 +12,11 @@
 
 namespace mario
 {
-enum class Animations
+enum class GoombaAnimations
 {
-    Alive = 0,
-    Dead  = 1,
-    Count = 2,
+    Walking = 0,
+    Dead    = 1,
+    Count   = 2,
 };
 
 class Goomba
@@ -36,8 +36,8 @@ class Goomba
     sf::Sprite m_goomba;
     sf::Vector2f m_velocity;
     sf::Vector2f m_position;
-    Animations m_currentAnimation;
-    Animation m_animations[int(Animations::Count)];
+    GoombaAnimations m_currentAnimation;
+    Animation m_animations[int(GoombaAnimations::Count)];
 
     static constexpr float SPEED = 100.0f;
 };
