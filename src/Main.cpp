@@ -1,10 +1,12 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 
+#include "headers/Goomba.h"
 #include "headers/Mario.h"
 #include "headers/ResourceManager.h"
 
 #include <SFML/Graphics/RectangleShape.hpp>
+
 #include <chrono>
 
 int main()
@@ -14,6 +16,7 @@ int main()
     mario::ResourceManager resourceManager;
 
     mario::Mario mario;
+    mario::Goomba goomba;
 
     auto start = std::chrono::steady_clock::now();
 
@@ -44,17 +47,6 @@ int main()
         start = end;
 
         direction.x *= 0.5;
-        direction.y *= 0.5;
-
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-        {
-            direction.y -= 1.0f;
-        }
-
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-        {
-            direction.y += 1.0f;
-        }
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
         {
@@ -68,12 +60,17 @@ int main()
 
         mario.setDirection(direction);
         mario.update(deltaTime);
+
+        goomba.setDirection(direction);
+        goomba.update(deltaTime);
+
         view.setCenter(mario.getPosition().x, mario.getPosition().y);
         window.setView(view);
 
         window.clear();
         window.draw(map);
         mario.render(window);
+        goomba.render(window);
         window.display();
     }
 }

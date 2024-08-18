@@ -6,24 +6,23 @@
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/System/Vector2.hpp>
 
-#include "Animation.h"
-
 #include <filesystem>
+
+#include "Animation.h"
 
 namespace mario
 {
-
-enum class MarioAnimations
+enum class Animations
 {
-    RighWalk = 0,
-    LeftWalk = 1,
-    Count    = 2,
+    Alive = 0,
+    Dead  = 1,
+    Count = 2,
 };
 
-class Mario
+class Goomba
 {
   public:
-    Mario();
+    Goomba();
 
     void render(sf::RenderWindow &window);
 
@@ -34,11 +33,11 @@ class Mario
     sf::Vector2f getPosition() const { return m_position; }
 
   private:
-    sf::Sprite m_mario;
+    sf::Sprite m_goomba;
     sf::Vector2f m_velocity;
     sf::Vector2f m_position;
-    MarioAnimations m_currentAnimation;
-    Animation m_animations[int(MarioAnimations::Count)];
+    Animations m_currentAnimation;
+    Animation m_animations[int(Animations::Count)];
 
     static constexpr float SPEED = 100.0f;
 };
