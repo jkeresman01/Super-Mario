@@ -11,7 +11,7 @@ Mario::Mario()
     m_animations[int(MarioAnimations::LeftWalk)] =
         Animation(80, 52, 29, 29, 3, "resources/smb_mario_sheet.png");
 
-    m_mario.setScale(2, 2);
+    m_mario.setScale(SCALE_X, SCALE_Y);
     m_mario.setPosition(m_position);
 }
 
