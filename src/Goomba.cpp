@@ -11,7 +11,7 @@ Goomba::Goomba()
     m_animations[int(GoombaAnimations::Dead)] =
         Animation(0, 62, 30, 30, 1, "resources/smb_enemies_sheet.png");
 
-    m_goomba.setScale(2, 2);
+    m_goomba.setScale(SCALE_X, SCALE_Y);
     m_goomba.setPosition(m_position);
 }
 

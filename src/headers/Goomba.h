@@ -40,6 +40,9 @@ class Goomba
     Animation m_animations[int(GoombaAnimations::Count)];
 
     static constexpr float SPEED = 100.0f;
+
+    static constexpr float SCALE_X = 2.0f;
+    static constexpr float SCALE_Y = 2.0f;
 };
 
 } // namespace mario
