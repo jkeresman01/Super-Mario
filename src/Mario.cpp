@@ -18,6 +18,7 @@ Mario::Mario()
 void Mario::update(float deltaTime)
 {
     m_position += m_velocity * deltaTime;
+    m_mario.setPosition(m_position);
 
     m_animations[int(m_currentAnimation)].update(deltaTime);
     m_animations[int(m_currentAnimation)].applyToSprite(m_mario);
@@ -38,9 +39,8 @@ void Mario::setDirection(const sf::Vector2f &direction)
     }
 }
 
-void Mario::render(sf::RenderWindow &window)
+void Mario::render(sf::RenderWindow &window) const
 {
-    m_mario.setPosition(m_position);
     window.draw(m_mario);
 }
 

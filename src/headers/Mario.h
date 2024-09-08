@@ -25,7 +25,7 @@ class Mario
   public:
     Mario();
 
-    void render(sf::RenderWindow &window);
+    void render(sf::RenderWindow &window) const;
 
     void update(float deltaTime);
 
