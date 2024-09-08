@@ -4,9 +4,9 @@ namespace mario
 {
 
 Goomba::Goomba()
-    : m_velocity(0.0f, 0.0f), m_position(300, 200), m_currentAnimation(GoombaAnimations::Walking)
+    : m_velocity(0.0f, 0.0f), m_position(300, 200), m_currentAnimation(GoombaAnimations::Alive)
 {
-    m_animations[int(GoombaAnimations::Walking)] =
+    m_animations[int(GoombaAnimations::Alive)] =
         Animation(0, 0, 30, 30, 2, "resources/smb_enemies_sheet.png");
     m_animations[int(GoombaAnimations::Dead)] =
         Animation(0, 62, 30, 30, 1, "resources/smb_enemies_sheet.png");

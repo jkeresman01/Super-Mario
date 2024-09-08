@@ -14,7 +14,7 @@ namespace mario
 {
 enum class GoombaAnimations
 {
-    Walking = 0,
+    Alive   = 0,
     Dead    = 1,
     Count   = 2,
 };
