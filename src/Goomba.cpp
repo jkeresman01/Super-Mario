@@ -18,6 +18,7 @@ Goomba::Goomba()
 void Goomba::update(float deltaTime)
 {
     m_position += m_velocity * deltaTime;
+    m_goomba.setPosition(m_position);
 
     m_animations[int(m_currentAnimation)].update(deltaTime);
     m_animations[int(m_currentAnimation)].applyToSprite(m_goomba);
@@ -28,9 +29,8 @@ void Goomba::setDirection(const sf::Vector2f &direction)
     m_velocity = direction * SPEED;
 }
 
-void Goomba::render(sf::RenderWindow &window)
+void Goomba::render(sf::RenderWindow &window) const
 {
-    m_goomba.setPosition(m_position);
     window.draw(m_goomba);
 }
 

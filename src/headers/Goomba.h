@@ -24,7 +24,7 @@ class Goomba
   public:
     Goomba();
 
-    void render(sf::RenderWindow &window);
+    void render(sf::RenderWindow &window) const;
 
     void update(float deltaTime);
 
