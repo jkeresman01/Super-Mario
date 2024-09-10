@@ -9,9 +9,9 @@
 namespace mario
 {
 
-typedef std::unordered_map<std::string, sf::Font> FontMapT;
-typedef std::unordered_map<std::string, sf::Texture> TextureMapT;
-typedef std::unordered_map<std::string, sf::SoundBuffer> SoundBufferMapT;
+typedef std::unordered_map<std::string, sf::Font> FontUnorderedMapT;
+typedef std::unordered_map<std::string, sf::Texture> TextureUnorderedMapT;
+typedef std::unordered_map<std::string, sf::SoundBuffer> SoundUnorderedBufferMapT;
 
 class ResourceManager
 {
@@ -33,9 +33,9 @@ class ResourceManager
     void loadSoundBuffer(const std::filesystem::path &filepath);
 
   private:
-    FontMapT m_fonts;
-    TextureMapT m_textures;
-    SoundBufferMapT m_soundBuffers;
+    FontUnorderedMapT m_fonts;
+    TextureUnorderedMapT m_textures;
+    SoundUnorderedBufferMapT m_soundBuffers;
 };
 
 } // namespace mario

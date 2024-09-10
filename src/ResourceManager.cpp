@@ -7,7 +7,7 @@ namespace mario
 
 const sf::Texture &ResourceManager::getTexture(const std::filesystem::path &filepath)
 {
-    TextureMapT::iterator it = m_textures.find(filepath.string());
+    TextureUnorderedMapT::iterator it = m_textures.find(filepath.string());
 
     if (it == m_textures.end())
     {
@@ -35,7 +35,7 @@ void ResourceManager::loadTexture(const std::filesystem::path &filepath)
 
 const sf::Font &ResourceManager::getFont(const std::filesystem::path &filepath)
 {
-    FontMapT::iterator it = m_fonts.find(filepath.string());
+    FontUnorderedMapT::iterator it = m_fonts.find(filepath.string());
 
     if (it == m_fonts.end())
     {
@@ -63,7 +63,7 @@ void ResourceManager::loadFont(const std::filesystem::path &filepath)
 
 const sf::SoundBuffer &ResourceManager::getSoundBuffer(const std::filesystem::path &filepath)
 {
-    SoundBufferMapT::iterator it = m_soundBuffers.find(filepath.string());
+    SoundUnorderedBufferMapT::iterator it = m_soundBuffers.find(filepath.string());
 
     if (it == m_soundBuffers.end())
     {
