@@ -25,7 +25,7 @@ class ResourceManager
 
     const sf::Texture &getTexture(const std::filesystem::path &filepath);
     const sf::Font &getFont(const std::filesystem::path &filepath);
-    const sf::SoundBuffer &getSoundBuffer(const std::filesystem::path &filepath);
+    const sf::SoundBuffer &getSoundfuffer(const std::filesystem::path &filepath);
 
   private:
     void loadFont(const std::filesystem::path &filepath);
