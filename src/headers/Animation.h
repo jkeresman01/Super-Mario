@@ -28,7 +28,7 @@ class Animation
 
     FramesT m_frames;
     sf::Texture m_texture;
-    int32_t m_currentFrame   = 0;
+    int32_t m_currentFrame = 0;
     int32_t m_numberOfFrames = 0;
     float m_elapsedTime;
 };

@@ -17,7 +17,7 @@ enum class MarioAnimations
 {
     RighWalk = 0,
     LeftWalk = 1,
-    Count    = 2,
+    Count = 2,
 };
 
 class Mario
