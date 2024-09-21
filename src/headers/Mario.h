@@ -8,6 +8,7 @@
 
 #include "Animation.h"
 
+#include <cstdint>
 #include <filesystem>
 
 namespace mario
@@ -15,9 +16,9 @@ namespace mario
 
 enum class MarioAnimations
 {
-    RighWalk = 0,
-    LeftWalk = 1,
-    Count = 2,
+    RIGHT_WALK = 0,
+    LEFT_WALK = 1,
+    COUNT = 2,
 };
 
 class Mario
@@ -27,23 +28,30 @@ class Mario
 
     void render(sf::RenderWindow &window) const;
 
-    void update(float deltaTime);
+    void processEvents();
 
-    void setDirection(const sf::Vector2f &direction);
+    void update(float deltaTime);
 
     sf::Vector2f getPosition() const { return m_position; }
 
   private:
+    void setDirection();
+
+  private:
     sf::Sprite m_mario;
     sf::Vector2f m_velocity;
+    sf::Vector2f m_direction;
     sf::Vector2f m_position;
     MarioAnimations m_currentAnimation;
-    Animation m_animations[int(MarioAnimations::Count)];
+    Animation m_animations[int(MarioAnimations::COUNT)];
 
     static constexpr float SPEED = 100.0f;
 
     static constexpr float SCALE_X = 2.0f;
     static constexpr float SCALE_Y = 2.0f;
+
+    static constexpr uint32_t START_POSITION_X = 400;
+    static constexpr uint32_t START_POSITION_Y = 300;
 };
 
 } // namespace mario

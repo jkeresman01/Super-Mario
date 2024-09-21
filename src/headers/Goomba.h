@@ -6,6 +6,7 @@
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/System/Vector2.hpp>
 
+#include <cstdint>
 #include <filesystem>
 
 #include "Animation.h"
@@ -14,9 +15,9 @@ namespace mario
 {
 enum class GoombaAnimations
 {
-    Alive = 0,
-    Dead = 1,
-    Count = 2,
+    ALIVE = 0,
+    DEAD = 1,
+    COUNT = 2,
 };
 
 class Goomba
@@ -37,12 +38,16 @@ class Goomba
     sf::Vector2f m_velocity;
     sf::Vector2f m_position;
     GoombaAnimations m_currentAnimation;
-    Animation m_animations[int(GoombaAnimations::Count)];
+    Animation m_animations[int(GoombaAnimations::COUNT)];
 
     static constexpr float SPEED = 100.0f;
 
     static constexpr float SCALE_X = 2.0f;
     static constexpr float SCALE_Y = 2.0f;
+
+    static constexpr uint32_t START_POSITION_X = 300;
+    static constexpr uint32_t START_POSITION_Y = 200;
+
 };
 
 } // namespace mario
