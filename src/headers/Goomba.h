@@ -47,7 +47,6 @@ class Goomba
 
     static constexpr uint32_t START_POSITION_X = 300;
     static constexpr uint32_t START_POSITION_Y = 200;
-
 };
 
 } // namespace mario

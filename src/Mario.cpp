@@ -7,7 +7,9 @@ namespace mario
 {
 
 Mario::Mario()
-    : m_velocity(0.0f, 0.0f), m_direction(0.0f, 0.0f), m_position(START_POSITION_X, START_POSITION_Y), m_currentAnimation(MarioAnimations::RIGHT_WALK)
+    : m_velocity(0.0f, 0.0f), m_direction(0.0f, 0.0f),
+      m_position(START_POSITION_X, START_POSITION_Y),
+      m_currentAnimation(MarioAnimations::RIGHT_WALK)
 {
     m_animations[int(MarioAnimations::RIGHT_WALK)] =
         Animation(230, 52, 29, 29, 3, textures::MarioAnimations);

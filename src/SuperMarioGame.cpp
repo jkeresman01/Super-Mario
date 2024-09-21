@@ -5,8 +5,9 @@
 namespace mario
 {
 
-SuperMarioGame::SuperMarioGame() : m_window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Super Mario"), 
-    m_view(sf::Vector2f(0, 0), sf::Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT))
+SuperMarioGame::SuperMarioGame()
+    : m_window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Super Mario"),
+      m_view(sf::Vector2f(0, 0), sf::Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT))
 {
 }
 
@@ -18,20 +19,18 @@ void SuperMarioGame::run()
         update();
         render();
     }
-
 }
 
 void SuperMarioGame::processEvents()
-{        
+{
     sf::Event event;
-        while (m_window.pollEvent(event))
+    while (m_window.pollEvent(event))
+    {
+        if (event.type == sf::Event::Closed)
         {
-            if (event.type == sf::Event::Closed)
-            {
-                m_window.close();
-            }
+            m_window.close();
         }
-
+    }
 }
 
 void SuperMarioGame::update()
@@ -55,4 +54,4 @@ void SuperMarioGame::render()
     m_window.display();
 }
 
-}
+} // namespace mario

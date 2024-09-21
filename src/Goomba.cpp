@@ -6,7 +6,8 @@ namespace mario
 {
 
 Goomba::Goomba()
-    : m_velocity(0.0f, 0.0f), m_position(START_POSITION_X, START_POSITION_Y), m_currentAnimation(GoombaAnimations::ALIVE)
+    : m_velocity(0.0f, 0.0f), m_position(START_POSITION_X, START_POSITION_Y),
+      m_currentAnimation(GoombaAnimations::ALIVE)
 {
     m_animations[int(GoombaAnimations::ALIVE)] =
         Animation(0, 0, 30, 30, 2, textures::EnemiesAnimations);

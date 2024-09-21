@@ -10,30 +10,28 @@
 
 namespace mario
 {
-    
+
 class SuperMarioGame
 {
-    public:
-        SuperMarioGame();
-        
-        void run();
+  public:
+    SuperMarioGame();
 
-    private:
-        void processEvents();
-        void update();
-        void render();
+    void run();
 
-    private:
-        sf::RenderWindow m_window;
-        sf::View m_view;
-        sf::Clock m_clock;
-        Mario m_mario;
-        Goomba m_goomba;
+  private:
+    void processEvents();
+    void update();
+    void render();
 
-        static constexpr uint32_t SCREEN_WIDTH = 960;
-        static constexpr uint32_t SCREEN_HEIGHT = 480;
+  private:
+    sf::RenderWindow m_window;
+    sf::View m_view;
+    sf::Clock m_clock;
+    Mario m_mario;
+    Goomba m_goomba;
 
+    static constexpr uint32_t SCREEN_WIDTH = 960;
+    static constexpr uint32_t SCREEN_HEIGHT = 480;
 };
 
-}
-
+} // namespace mario
