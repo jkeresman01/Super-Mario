@@ -61,7 +61,7 @@ void ResourceManager::loadFont(const std::filesystem::path &filepath)
     m_fonts.emplace(filepath.string(), font);
 }
 
-const sf::SoundBuffer &ResourceManager::getSoundBuffer(const std::filesystem::path &filepath)
+const sf::SoundBuffer &ResourceManager::getSoundfuffer(const std::filesystem::path &filepath)
 {
     SoundUnorderedBufferMapT::iterator it = m_soundBuffers.find(filepath.string());
 
@@ -91,8 +91,8 @@ void ResourceManager::loadSoundBuffer(const std::filesystem::path &filepath)
 
 ResourceManager &ResourceManager::Instance()
 {
-    static ResourceManager instace;
-    return instace;
+    static ResourceManager instance;
+    return instance;
 }
 
 } // namespace mario
