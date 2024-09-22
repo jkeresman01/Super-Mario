@@ -7,11 +7,9 @@ namespace mario
 
 Animation::Animation(uint32_t positionX, uint32_t positionY, uint32_t width, uint32_t height,
                      uint32_t numberOfFrames, const std::filesystem::path &filepath)
-    : m_numberOfFrames(numberOfFrames)
+    : m_numberOfFrames(numberOfFrames), m_texture(ResourceManager::Instance().getTexture(filepath))
 {
-    m_texture = ResourceManager::Instance().getTexture(filepath);
-
-    for (uint32_t i = 0; i < m_numberOfFrames; ++i)
+    for (size_t i = 0; i < m_numberOfFrames; ++i)
     {
         m_frames.emplace_back(positionX + i * width, positionY, width, height);
     }
