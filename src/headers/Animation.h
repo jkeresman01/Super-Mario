@@ -30,7 +30,7 @@ class Animation
     sf::Texture m_texture;
     int32_t m_currentFrame = 0;
     int32_t m_numberOfFrames = 0;
-    float m_elapsedTime;
+    float m_elapsedTime = 0.0f;
 };
 
 } // namespace mario
