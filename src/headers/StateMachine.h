@@ -6,21 +6,21 @@
 
 namespace mario
 {
-    typedef std::unique_ptr<State> StateRefT;
+typedef std::unique_ptr<State> StateRefT;
 
-    class StateMachine
-    {
-        public:
-            StateMachine() = default;
-            ~StateMachine() = default;
+class StateMachine
+{
+  public:
+    StateMachine() = default;
+    ~StateMachine() = default;
 
-            void addState(StateRefT state, bool isReplacing);
-            void remoteState();
+    void addState(StateRefT state, bool isReplacing);
+    void remoteState();
 
-            StateRefT &getActiveState();
+    StateRefT &getActiveState();
 
-        private:
-            std::stack<StateRefT> m_states;
-    };
+  private:
+    std::stack<StateRefT> m_states;
+};
 
-}
+} // namespace mario
