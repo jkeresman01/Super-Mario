@@ -13,6 +13,7 @@
 
 namespace mario
 {
+
 enum class GoombaAnimations
 {
     ALIVE = 0,
