@@ -6,7 +6,7 @@ namespace mario
 {
 void StateMachine::addState(StateRefT state, bool isReplacing)
 {
-    if (!m_states.empty() && isReplacing)
+    if (!m_states.empty() and isReplacing)
     {
         m_states.pop();
     }
