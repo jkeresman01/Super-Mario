@@ -6,6 +6,7 @@
 
 namespace mario
 {
+
 typedef std::unique_ptr<State> StateRefT;
 
 class StateMachine
