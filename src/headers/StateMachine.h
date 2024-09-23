@@ -1,8 +1,10 @@
 #pragma once
 
-#include "State.h"
+
 #include <memory>
 #include <stack>
+
+#include "State.h"
 
 namespace mario
 {

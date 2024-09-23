@@ -2,6 +2,7 @@
 
 namespace mario
 {
+
 class State
 {
   public:
