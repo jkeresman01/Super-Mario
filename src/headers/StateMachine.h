@@ -18,7 +18,7 @@ class StateMachine
     ~StateMachine() = default;
 
     void addState(StateRefT state, bool isReplacing);
-    void remoteState();
+    void removeState();
 
     StateRefT &getActiveState();
 
